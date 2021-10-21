@@ -4,24 +4,35 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>home</title>
+        <title>projects/rsa</title>
         <link href="../static/css/main.css" rel="stylesheet">
         <script src="../static/js/main.js"></script>
     </head>
 
     <body>
         <div class="navbar">
-            <li id="active"><a href="/home">home</a></li>
+            <li><a href="/home">home</a></li>
             <li><a href="/about">about</a></li>
-            <li class="dropdown">
+            <li id="active" class="dropdown">
                 <a href="/projects">projects</a>
                 <div class="dropdown-content">
-                    <a href="">rsa</a>
+                    <a href="/projects/rsa">rsa</a>
                 </div>
             </li>
         </div>
         <div>
-            
+            <center>
+                <h1>RSA</h1>
+            </center>
+            <h3>Variables</h3>
+            <div class="code">
+                p<p>{{ p }}</p>
+                q<p>{{ q }}</p>
+                n<p>{{ n }}</p>
+                F<p>{{ F }}</p>
+                e<p>{{ e }}</p>
+                d<p>{{ d }}</p>
+            </div>
         </div>
     </body>
 </html>
