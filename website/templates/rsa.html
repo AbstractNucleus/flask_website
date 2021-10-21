@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>projects/rsa</title>
         <link href="../static/css/main.css" rel="stylesheet">
+        <link href="../static/css/rsa.css" rel="stylesheet">
         <script src="../static/js/main.js"></script>
     </head>
 
@@ -24,14 +25,32 @@
             <center>
                 <h1>RSA</h1>
             </center>
-            <h3>Variables</h3>
-            <div class="code">
-                p<p>{{ p }}</p>
-                q<p>{{ q }}</p>
-                n<p>{{ n }}</p>
-                F<p>{{ F }}</p>
-                e<p>{{ e }}</p>
-                d<p>{{ d }}</p>
+            <div class="variables">
+                <div style="width: fit-content;">
+                    <h2>Variables</h2>
+                </div>
+                <div class="code">
+                    p<p>{{ p }}</p>
+                    q<p>{{ q }}</p>
+                    n<p>{{ n }}</p>
+                    F<p>{{ F }}</p>
+                    e<p>{{ e }}</p>
+                    d<p>{{ d }}</p>
+                </div>
+            </div>
+            <div class="encryption">
+                <h2>encrypt</h2>
+                <input class="crypto-input" name="message" type="text" placeholder="message">
+                <button class="crypto-button">></button>
+                <p>n : <input class="var-input" name="n_input" type="text" placeholder="n"></p>
+                <p>e : <input class="var-input" name="e_input" type="text" placeholder="e"></p>
+            </div>
+            <div class="decryption">
+                <h2>decrypt</h2>
+                <input class="crypto-input" name="cipher" type="text" placeholder="cipher">
+                <button class="crypto-button">></button>
+                <p>n : <input class="var-input" name="n_input" type="text" placeholder="n"></p>
+                <p>d : <input class="var-input" name="d_input" type="text" placeholder="d"></p>
             </div>
         </div>
     </body>
