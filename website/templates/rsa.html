@@ -26,6 +26,7 @@
                 <h1>RSA</h1>
             </center>
             <div class="variables">
+                <center>
                 <div style="width: fit-content;">
                     <h2>Variables</h2>
                 </div>
@@ -37,20 +38,30 @@
                     e<p>{{ e }}</p>
                     d<p>{{ d }}</p>
                 </div>
+                </center>
             </div>
             <div class="encryption">
                 <h2>encrypt</h2>
-                <input class="crypto-input" name="message" type="text" placeholder="message">
-                <button class="crypto-button">></button>
-                <p>n : <input class="var-input" name="n_input" type="text" placeholder="n"></p>
-                <p>e : <input class="var-input" name="e_input" type="text" placeholder="e"></p>
+                <form method="POST">
+                    <input class="crypto-input" name="message" type="text" placeholder="message">
+                    <button class="crypto-button">></button>
+                    <p>n : <input class="var-input" name="n_encrypt" type="text" placeholder="n"></p>
+                    <p>e : <input class="var-input" name="e_encrypt" type="text" placeholder="e"></p>
+                </form>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
             </div>
             <div class="decryption">
                 <h2>decrypt</h2>
                 <input class="crypto-input" name="cipher" type="text" placeholder="cipher">
                 <button class="crypto-button">></button>
-                <p>n : <input class="var-input" name="n_input" type="text" placeholder="n"></p>
-                <p>d : <input class="var-input" name="d_input" type="text" placeholder="d"></p>
+                <p>n : <input class="var-input" name="n_decrypt" type="text" placeholder="n"></p>
+                <p>d : <input class="var-input" name="d_decrypt" type="text" placeholder="d"></p>
             </div>
         </div>
     </body>
