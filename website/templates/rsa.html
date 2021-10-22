@@ -48,20 +48,45 @@
                     <p>n : <input class="var-input" name="n_encrypt" type="text" placeholder="n"></p>
                     <p>e : <input class="var-input" name="e_encrypt" type="text" placeholder="e"></p>
                 </form>
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        {% for message in messages %}
-                            {{ message }}
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
+                {% if cipher%}
+                    <h3 style="padding-top: 25px;">Cipher</h3>
+                    <div class="code">
+                        <p>{{ cipher }}</p>
+                    </div>
+                    <h2 style="padding-top: 25px;">Used variables</h2>
+                    <h3 style="padding-top: 25px;">n</h3>
+                    <div class="code">
+                        <p>{{ n_encrypt }}</p>
+                    </div>
+                    <h3 style="padding-top: 25px;">e</h3>
+                    <div class="code">
+                        <p>{{ e_encrypt }}</p>
+                    </div>
+                {% endif %}
             </div>
             <div class="decryption">
                 <h2>decrypt</h2>
-                <input class="crypto-input" name="cipher" type="text" placeholder="cipher">
-                <button class="crypto-button">></button>
-                <p>n : <input class="var-input" name="n_decrypt" type="text" placeholder="n"></p>
-                <p>d : <input class="var-input" name="d_decrypt" type="text" placeholder="d"></p>
+                <form method="POST">
+                    <input class="crypto-input" name="input_cipher" type="text" placeholder="cipher">
+                    <button class="crypto-button">></button>
+                    <p>n : <input class="var-input" name="n_decrypt" type="text" placeholder="n"></p>
+                    <p>d : <input class="var-input" name="d_decrypt" type="text" placeholder="d"></p>
+                </form>
+                {% if output_message %}
+                    <h3 style="padding-top: 25px;">Decrypted message</h3>
+                    <div class="code">
+                        <p>{{ output_message }}</p>
+                    </div>
+                    <h2 style="padding-top: 25px;">Used variables</h2>
+                    <h3 style="padding-top: 25px;">n</h3>
+                    <div class="code">
+                        <p>{{ n_decrypt }}</p>
+                    </div>
+                    <h3 style="padding-top: 25px;">d</h3>
+                    <div class="code">
+                        <p>{{ d_decrypt }}</p>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </body>
