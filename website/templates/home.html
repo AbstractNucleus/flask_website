@@ -1,27 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
+{% block title %}home{% endblock %}
+{% block content %}
 
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>home</title>
-        <link href="../static/css/main.css" rel="stylesheet">
-        <script src="../static/js/main.js"></script>
-    </head>
-
-    <body>
-        <div class="navbar">
-            <li id="active"><a href="/home">home</a></li>
-            <li><a href="/about">about</a></li>
-            <li class="dropdown">
-                <a href="/projects">projects</a>
-                <div class="dropdown-content">
-                    <a href="/projects/rsa">rsa</a>
-                </div>
-            </li>
-        </div>
-        <div>
-            
-        </div>
-    </body>
-</html>
+{% endblock %}

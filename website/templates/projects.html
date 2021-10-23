@@ -1,31 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>projects</title>
-        <link href="../static/css/main.css" rel="stylesheet">
-        <script src="../static/js/main.js"></script>
-    </head>
-
-    <body>
-        <div class="navbar">
-            <li><a href="/home">home</a></li>
-            <li><a href="/about">about</a></li>
-            <li id="active" class="dropdown">
-                <a href="/projects">projects</a>
-                <div class="dropdown-content">
-                    <a href="/projects/rsa">rsa</a>
-                </div>
-            </li>
-        </div>
-        <div>
-            <center>
-                <div class="big-nav">
-                    <li><a href="/projects/rsa">rsa</a></li>
-                </div>
-            </center>
-        </div>
-    </body>
-</html>
+{% extends "layout.html" %}
+{% block title %}rsa{% endblock %}
+{% block content %}
+<center>
+    <div class="big-nav">
+        <li><a href="/projects/rsa">rsa</a></li>
+        <li><a href="/projects/user-api">user-api</a></li>
+    </div>
+</center>
+{% endblock %}

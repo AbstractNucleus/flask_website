@@ -1,93 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>projects/rsa</title>
-        <link href="../static/css/main.css" rel="stylesheet">
-        <link href="../static/css/rsa.css" rel="stylesheet">
-        <script src="../static/js/main.js"></script>
-    </head>
-
-    <body>
-        <div class="navbar">
-            <li><a href="/home">home</a></li>
-            <li><a href="/about">about</a></li>
-            <li id="active" class="dropdown">
-                <a href="/projects">projects</a>
-                <div class="dropdown-content">
-                    <a href="/projects/rsa">rsa</a>
-                </div>
-            </li>
+{% extends "layout.html" %}
+{% block title %}rsa{% endblock %}
+{% block content %}
+<div>
+    <center><h1>RSA</h1></center>
+    <div class="variables">
+        <center>
+        <div style="width: fit-content;">
+            <h2>Variables</h2>
         </div>
-        <div>
-            <center>
-                <h1>RSA</h1>
-            </center>
-            <div class="variables">
-                <center>
-                <div style="width: fit-content;">
-                    <h2>Variables</h2>
-                </div>
-                <div class="code">
-                    p<p>{{ p }}</p>
-                    q<p>{{ q }}</p>
-                    n<p>{{ n }}</p>
-                    F<p>{{ F }}</p>
-                    e<p>{{ e }}</p>
-                    d<p>{{ d }}</p>
-                </div>
-                </center>
-            </div>
-            <div class="encryption">
-                <h2>encrypt</h2>
-                <form method="POST">
-                    <input class="crypto-input" name="message" type="text" placeholder="message">
-                    <button class="crypto-button">></button>
-                    <p>n : <input class="var-input" name="n_encrypt" type="text" placeholder="n"></p>
-                    <p>e : <input class="var-input" name="e_encrypt" type="text" placeholder="e"></p>
-                </form>
-                {% if cipher%}
-                    <h3 style="padding-top: 25px;">Cipher</h3>
-                    <div class="code">
-                        <p>{{ cipher }}</p>
-                    </div>
-                    <h2 style="padding-top: 25px;">Used variables</h2>
-                    <h3 style="padding-top: 25px;">n</h3>
-                    <div class="code">
-                        <p>{{ n_encrypt }}</p>
-                    </div>
-                    <h3 style="padding-top: 25px;">e</h3>
-                    <div class="code">
-                        <p>{{ e_encrypt }}</p>
-                    </div>
-                {% endif %}
-            </div>
-            <div class="decryption">
-                <h2>decrypt</h2>
-                <form method="POST">
-                    <input class="crypto-input" name="input_cipher" type="text" placeholder="cipher">
-                    <button class="crypto-button">></button>
-                    <p>n : <input class="var-input" name="n_decrypt" type="text" placeholder="n"></p>
-                    <p>d : <input class="var-input" name="d_decrypt" type="text" placeholder="d"></p>
-                </form>
-                {% if output_message %}
-                    <h3 style="padding-top: 25px;">Decrypted message</h3>
-                    <div class="code">
-                        <p>{{ output_message }}</p>
-                    </div>
-                    <h2 style="padding-top: 25px;">Used variables</h2>
-                    <h3 style="padding-top: 25px;">n</h3>
-                    <div class="code">
-                        <p>{{ n_decrypt }}</p>
-                    </div>
-                    <h3 style="padding-top: 25px;">d</h3>
-                    <div class="code">
-                        <p>{{ d_decrypt }}</p>
-                    </div>
-                {% endif %}
-            </div>
+        <div class="code">
+            p<p>{{ p }}</p>
+            q<p>{{ q }}</p>
+            n<p>{{ n }}</p>
+            F<p>{{ F }}</p>
+            e<p>{{ e }}</p>
+            d<p>{{ d }}</p>
         </div>
-    </body>
-</html>
+        </center>
+    </div>
+    <div class="encryption">
+        <h2>encrypt</h2>
+        <form method="POST">
+            <input class="crypto-input" name="message" type="text" placeholder="message">
+            <button class="crypto-button">></button>
+            <p>n : <input class="var-input" name="n_encrypt" type="text" placeholder="n"></p>
+            <p>e : <input class="var-input" name="e_encrypt" type="text" placeholder="e"></p>
+        </form>
+        {% if cipher%}
+            <h3 style="padding-top: 25px;">Cipher</h3>
+            <div class="code">
+                <p>{{ cipher }}</p>
+            </div>
+            <h2 style="padding-top: 25px;">Used variables</h2>
+            <h3 style="padding-top: 25px;">n</h3>
+            <div class="code">
+                <p>{{ n_encrypt }}</p>
+            </div>
+            <h3 style="padding-top: 25px;">e</h3>
+            <div class="code">
+                <p>{{ e_encrypt }}</p>
+            </div>
+        {% endif %}
+    </div>
+    <div class="decryption">
+        <h2>decrypt</h2>
+        <form method="POST">
+            <input class="crypto-input" name="input_cipher" type="text" placeholder="cipher">
+            <button class="crypto-button">></button>
+            <p>n : <input class="var-input" name="n_decrypt" type="text" placeholder="n"></p>
+            <p>d : <input class="var-input" name="d_decrypt" type="text" placeholder="d"></p>
+        </form>
+        {% if output_message %}
+            <h3 style="padding-top: 25px;">Decrypted message</h3>
+            <div class="code">
+                <p>{{ output_message }}</p>
+            </div>
+            <h2 style="padding-top: 25px;">Used variables</h2>
+            <h3 style="padding-top: 25px;">n</h3>
+            <div class="code">
+                <p>{{ n_decrypt }}</p>
+            </div>
+            <h3 style="padding-top: 25px;">d</h3>
+            <div class="code">
+                <p>{{ d_decrypt }}</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
