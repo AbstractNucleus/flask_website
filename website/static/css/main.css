@@ -171,3 +171,16 @@ body {
 .var-input:hover {
     background-color: #383838;
 }
+
+.login {
+    float: left;
+    width: 25%;
+}
+.register {
+    float: left;
+    width: 25%;
+}
+.read {
+    float: left;
+    width: 50%;
+}
