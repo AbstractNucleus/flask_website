@@ -39,7 +39,7 @@ def rsa():
 
 @projects.route("/user-api", methods=['GET', 'POST'])
 def user_api():
-    import random
+    '''import random
     token = "OGJhYmVhMjMtOGI0Mi00MDVhLTkwZDktZDZjZGRlMzUxMTlk"
     api_auth = {'Authorization' : f'Bearer {token}'}
 
@@ -98,7 +98,7 @@ def user_api():
             #a = create_record(db_create_record_data)
             print(b.text)
             #print(a.text)
-            print(user_id)
+            print(user_id)'''
 
 
     return render_template("user-api.html", acti="projects")
