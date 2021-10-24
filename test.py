@@ -1,11 +1,17 @@
-import random
 import requests
 
 token = "OGJhYmVhMjMtOGI0Mi00MDVhLTkwZDktZDZjZGRlMzUxMTlk"
 api_auth = {'Authorization' : f'Bearer {token}'}
 
-user_id = str(random.randint(10000000,99999999))
-user_register_data = {"email": "nosel@gmail.com", "id": user_id, "password": "leonleon", "username": "nosel"}
+json_data_c = {"record": {"email": "noel@gmail.com", "id": "420", "password": "noelnoel", "username": "noel"}, "table": "Users"}
+json_data_b = {"table": "users"}
 
-b = requests.post("https://api.m3o.com/v1/user/Create", headers=api_auth, data=user_register_data)
-#b = requests.post("https://api.m3o.com/v1/user/Create", headers=api_auth, data='{"email": "nosel@gmail.com", "id": user_id, "password": "leonleon", "username": "nosel"}')
+c = requests.post("https://api.m3o.com/v1/db/Create", headers=api_auth, json=json_data_c)
+b = requests.get("https://api.m3o.com/v1/db/Count", headers=api_auth, json=json_data_b)
+
+json_c = c.json()
+json_b = b.json()
+
+print(f"JSON response creation: {json_c}")
+print(f"JSON response count: {json_b}")
+#47397600

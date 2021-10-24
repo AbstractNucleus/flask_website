@@ -184,3 +184,7 @@ body {
     float: left;
     width: 50%;
 }
+
+.results {
+    padding-left: 40%;
+}

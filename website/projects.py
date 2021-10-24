@@ -39,7 +39,7 @@ def rsa():
 
 @projects.route("/user-api", methods=['GET', 'POST'])
 def user_api():
-    '''import random
+    import random
     token = "OGJhYmVhMjMtOGI0Mi00MDVhLTkwZDktZDZjZGRlMzUxMTlk"
     api_auth = {'Authorization' : f'Bearer {token}'}
 
@@ -60,45 +60,57 @@ def user_api():
 
 
     def create_user(data):
-        return requests.post("https://api.m3o.com/v1/user/Create", headers=api_auth, data=data)
+        return requests.post("https://api.m3o.com/v1/user/Create", headers=api_auth, json=data)
     def login_user(data):
-        return requests.post("https://api.m3o.com/v1/user/Login", headers=api_auth, data=data)
+        return requests.post("https://api.m3o.com/v1/user/Login", headers=api_auth, json=data)
     def delete_user(data):
-        return requests.post("https://api.m3o.com/v1/user/Delete", headers=api_auth, data=data)
+        return requests.post("https://api.m3o.com/v1/user/Delete", headers=api_auth, json=data)
     def logout_user(data):
-        return requests.post("https://api.m3o.com/v1/user/Logout", headers=api_auth, data=data)
-    def read_user(data):
-        return requests.get("https://api.m3o.com/v1/user/Read", headers=api_auth, data=data)
+        return requests.post("https://api.m3o.com/v1/user/Logout", headers=api_auth, json=data)
+    def func_read_user(data):
+        return requests.get("https://api.m3o.com/v1/user/Read", headers=api_auth, json=data)
     def read_session(data):
-        return requests.get("https://api.m3o.com/v1/user/ReadSession", headers=api_auth, data=data)
+        return requests.get("https://api.m3o.com/v1/user/ReadSession", headers=api_auth, json=data)
     
     def count_records(data):
-        return requests.get("https://api.m3o.com/v1/db/Count", headers=api_auth, data=data)
+        return requests.get("https://api.m3o.com/v1/db/Count", headers=api_auth, json=data)
     def create_record(data):
-        return requests.post("https://api.m3o.com/v1/db/Create", headers=api_auth, data=data)
+        return requests.post("https://api.m3o.com/v1/db/Create", headers=api_auth, json=data)
     def delete_record(data):
-        return requests.post("https://api.m3o.com/v1/db/Delete", headers=api_auth, data=data)
+        return requests.post("https://api.m3o.com/v1/db/Delete", headers=api_auth, json=data)
     def read_record(data):
-        return requests.get("https://api.m3o.com/v1/db/Read", headers=api_auth, data=data)
+        return requests.get("https://api.m3o.com/v1/db/Read", headers=api_auth, json=data)
     def update_record(data):
-        return requests.post("https://api.m3o.com/v1/db/Update", headers=api_auth, data=data)
+        return requests.post("https://api.m3o.com/v1/db/Update", headers=api_auth, json=data)
 
-    #db_rad_record_data = str({"query": "username == isak", "table": "users"})
-    #hh = requests.get("https://api.m3o.com/v1/db/Read", headers=api_auth, data=db_rad_record_data)
-    #print(hh.text)
+    hh = requests.get("https://api.m3o.com/v1/db/Read", headers=api_auth, json={})
+    print(hh.json())
 
     if request.method == "POST":
         register_email = str(g("register_email")); register_username = str(g("register_username")); register_password = str(g("register_password"))
         if g("register_email") and g("register_username") and g("register_password"):
             user_id = str(random.randint(10000000,99999999))
-            user_register_data = str({"email": register_email, "id": user_id, "password": register_password, "username": register_username})
-            db_create_record_data = str({"record": {"email": register_email, "id": user_id, "password": register_password, "username": register_username}, "table": "users"})
-            user_register_data = {"email": "nosel@gmail.com", "id": user_id, "password": "leonleon", "username": "nosel"}
-            b = requests.post("https://api.m3o.com/v1/user/Create", headers=api_auth, data=user_register_data)
-            #a = create_record(db_create_record_data)
-            print(b.text)
-            #print(a.text)
-            print(user_id)'''
+            user_register_data = {"email": register_email, "id": user_id, "password": register_password, "username": register_username}
+            db_create_record_data = {"record": {"email": register_email, "id": user_id, "password": register_password, "username": register_username}}
+            create_user_response = requests.post("https://api.m3o.com/v1/user/Create", headers=api_auth, json=user_register_data)
+            create_user_response = create_user_response.json()
+            if create_user_response["Code"] == 400:
+                return render_template("user-api.html", acti="projects", error="username already exists")
+            create_record_response = requests.post("https://api.m3o.com/v1/db/Create", headers=api_auth, json=db_create_record_data)
+        if g("read_user"):
+            read_user = g("read_user")
+            try:
+                read_user = int(read_user)
+                search = requests.post("https://api.m3o.com/v1/user/Read", headers=api_auth, json={"id": read_user}).json()
+            except:
+                search = requests.post("https://api.m3o.com/v1/user/Read", headers=api_auth, json={"username": read_user}).json()
+            print(search)
+            try:
+                if search["Id"] == "go.micro.client":
+                    return render_template("user-api.html", acti="projects", search=f'user not found [{read_user}]')
+            except:
+                return render_template("user-api.html", acti="projects", search=True, search_username=search["account"]["username"], search_id=search["account"]["id"], search_email=search["account"]["email"])
+        
 
 
     return render_template("user-api.html", acti="projects")
