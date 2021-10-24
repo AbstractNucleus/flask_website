@@ -104,9 +104,8 @@ def user_api():
                 search = requests.post("https://api.m3o.com/v1/user/Read", headers=api_auth, json={"id": read_user}).json()
             except:
                 search = requests.post("https://api.m3o.com/v1/user/Read", headers=api_auth, json={"username": read_user}).json()
-            print(search)
             try:
-                if search["Id"] == "go.micro.client":
+                if search["Code"] == "500":
                     return render_template("user-api.html", acti="projects", search=f'user not found [{read_user}]')
             except:
                 return render_template("user-api.html", acti="projects", search=True, search_username=search["account"]["username"], search_id=search["account"]["id"], search_email=search["account"]["email"])
