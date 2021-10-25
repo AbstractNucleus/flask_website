@@ -1,0 +1,190 @@
+:root {
+    --bg: #181818;
+    --main: #E71D36;
+    --main-hover: #ff9f1c;
+    --secondary: #19d6c3;
+    --secondary-hover: #75dbd1;
+    --title-text: #fdfffc;
+    --body-text: #ececec;
+    --navbar: #222222;
+    --navbar-hover: #202020;
+}
+
+
+body {
+    background-color: var(--bg);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    color: var(--title-text);
+}
+
+
+.navbar {
+    width: fit-content;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+}
+.navbar li {
+    float: left;
+}
+.navbar li:hover {
+    background-color: var(--navbar-hover);
+}
+.navbar li#active {
+    background-color: var(--navbar-hover);
+    border-color: #666666;
+    border-top-style: solid;
+}
+.navbar li a{
+    color: var(--main);
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar li a:hover {
+    color: var(--main-hover);
+}
+
+
+.dropdown-content {
+    display: none;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: #1a1a1a;
+}
+.dropdown:hover .dropdown-content a:hover{
+    background-color: var(--navbar-hover);
+}
+
+
+.big-nav {
+    width: fit-content;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 100px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 30px;
+}
+.big-nav li:hover {
+    background-color: var(--navbar-hover);
+}
+.big-nav li#active {
+    background-color: var(--navbar-hover);
+    border-color: #666666;
+    border-top-style: solid;
+}
+.big-nav li a{
+    color: var(--main);
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.big-nav li a:hover {
+    color: var(--main-hover);
+}
+
+
+.code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    width: 300px;
+    height: fit-content;
+    background-color: #222222;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #444444;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-right: 10px;
+    word-wrap:break-word;
+}
+.code p {
+    color: rgba(255, 255, 255, 0.521);
+    font-size: 10px;
+}
+.code p:hover {
+    background-color: #333333;
+}
+
+
+.variables {
+    width: 40%; 
+    float: left;
+}
+.encryption {
+    width: 30%; 
+    float: left;
+}
+.decryption {
+    width: 30%; 
+    float: left;
+}
+
+
+.crypto-input {
+    width: 60%;
+    font-family: 'Source Code Pro', monospace;
+    background-color: #333333;
+    border-style: solid;
+    border-color: #777777;
+    color: #ececec;
+    font-size: 12px;
+}
+.crypto-input:hover {
+    background-color: #383838;
+}
+.crypto-button {
+    font-size: 12px;
+    border-style: solid;
+    border-color: #777777;
+    font-family: 'Source Code Pro', monospace;
+    background-color: #222222;
+    color: #ececec;
+    width: 20%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.crypto-button:hover {
+    background-color: #333333;
+    color: #19d6c3;
+}
+
+
+.var-input {
+    width: 5%;
+    font-family: 'Source Code Pro', monospace;
+    background-color: #333333;
+    border-style: solid;
+    border-color: #777777;
+    color: #ececec;
+    font-size: 12px;
+}
+.var-input:hover {
+    background-color: #383838;
+}
+
+.login {
+    float: left;
+    width: 25%;
+}
+.register {
+    float: left;
+    width: 25%;
+}
+.read {
+    float: left;
+    width: 50%;
+}
+
+.results {
+    padding-left: 35%;
+}

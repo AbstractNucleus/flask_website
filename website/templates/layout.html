@@ -5,10 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>{% block title %}{% endblock %}</title>
         <link href="../static/css/main.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
         <script src="../static/js/main.js"></script>
     </head>
     <body>
-        <div class="navbar">
+        <!--<div class="navbar">
             {% if acti == "home" %}
                 <li id="active"><a href="/home">home</a></li>
                 <li><a href="/about">about</a></li>
@@ -59,7 +62,20 @@
                 </li>
             {% endif %}
             
+        </div>-->
+        
+        <div class="container">
+            <div class="row">
+                <div class="one column u-full-width" style="background-color: blueviolet;">
+                    <h1 style="font-size: 3rem;"><svg width="3rem" height="3rem"><image width="3rem" height="3rem" xlink:href="../static/images/tmp-file.png"></svg>noelkleen.com</h1>
+                </div>
+
+            </div>
         </div>
+
         <div>{% block content %}{% endblock %}</div>
+        <footer>
+
+        </footer>
     </body>
 </html>
