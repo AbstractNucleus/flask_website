@@ -9,87 +9,43 @@
         <link rel="stylesheet" href="../static/css/normalize.css">
         <link rel="stylesheet" href="../static/css/skeleton.css">
         <script src="../static/js/main.js"></script>
+        <script defer src="../static/fontawesome/js/all.js"></script>
     </head>
     <body>
-        <!--<div class="navbar">
-            {% if acti == "home" %}
-                <li id="active"><a href="/home">home</a></li>
-                <li><a href="/about">about</a></li>
-                <li class="dropdown">
-                    <a href="/projects">projects</a>
-                    <div class="dropdown-content">
-                        <div class="dropdown-content">
-                            <a href="/projects/rsa">rsa</a>
-                            <a href="/projects/user-api">user-api</a>
-                        </div>
-                    </div>
-                </li>
-            {% elif acti == "about" %}
-                <li><a href="/home">home</a></li>
-                <li id="active"><a href="/about">about</a></li>
-                <li class="dropdown">
-                    <a href="/projects">projects</a>
-                    <div class="dropdown-content">
-                        <div class="dropdown-content">
-                            <a href="/projects/rsa">rsa</a>
-                            <a href="/projects/user-api">user-api</a>
-                        </div>
-                    </div>
-                </li>
-            {% elif acti == "projects" %}
-                <li><a href="/home">home</a></li>
-                <li><a href="/about">about</a></li>
-                <li id="active" class="dropdown">
-                    <a href="/projects">projects</a>
-                    <div class="dropdown-content">
-                        <div class="dropdown-content">
-                            <a href="/projects/rsa">rsa</a>
-                            <a href="/projects/user-api">user-api</a>
-                        </div>
-                    </div>
-                </li>
-            {% else %}
-                <li><a href="/home">home</a></li>
-                <li><a href="/about">about</a></li>
-                <li class="dropdown">
-                    <a href="/projects">projects</a>
-                    <div class="dropdown-content">
-                        <div class="dropdown-content">
-                            <a href="/projects/rsa">rsa</a>
-                            <a href="/projects/user-api">user-api</a>
-                        </div>
-                    </div>
-                </li>
-            {% endif %}
-
-        </div>-->
-
         <div class="container">
             <div class="row">
-                <div class="four columns" style="margin-top: 1rem; padding: 1rem;">
-                    <a href="/" style="text-decoration: none; color:inherit;"><svg style="color:#D63A3E; margin: 0.5rem; width: 3rem; height: 3rem; float: left;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angles-up" class="svg-inline--fa fa-angles-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M54.63 246.6L192 109.3l137.4 137.4C335.6 252.9 343.8 256 352 256s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25l-160-160c-12.5-12.5-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25S42.13 259.1 54.63 246.6zM214.6 233.4c-12.5-12.5-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0L192 301.3l137.4 137.4C335.6 444.9 343.8 448 352 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L214.6 233.4z"></path></svg><h1 style="color: #ebebeb; font-size: 3rem;">noelkleen.com</h1></a>
+                <div class="four columns" style="margin-top: 2rem; padding-left: 6rem">
+                    <a href="/" style="text-decoration: none; color:inherit;">
+                      <div class="logo">
+                        <div class="icon">
+                          <i class="fa-solid fa-angles-up" style="color:#D63A3E; margin: 0.5rem; width:3rem; height: 3rem; float: left;"></i>
+                        </div>
+                        <div class="text">
+                          <h1 style="color: #ebebeb; font-size: 3rem;">noelkleen.com</h1>
+                        </div>
+                      </div>
+                    </a>
                 </div>
-
-                <div class="eight columns" style="color:#666666; margin-top: 1rem; padding: 1rem;">
-                    <svg class="navbar-icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="folder-open" class="svg-inline--fa fa-folder-open" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M147.8 192H480V144C480 117.5 458.5 96 432 96h-160l-64-64h-160C21.49 32 0 53.49 0 80v328.4l90.54-181.1C101.4 205.6 123.4 192 147.8 192zM543.1 224H147.8C135.7 224 124.6 230.8 119.2 241.7L0 480h447.1c12.12 0 23.2-6.852 28.62-17.69l96-192C583.2 249 567.7 224 543.1 224z"></path></svg>
-                    <svg class="navbar-icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="wallet" class="svg-inline--fa fa-wallet" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M448 128H80C71.13 128 64 120.9 64 112S71.13 96 80 96H480V80C480 53.49 458.5 32 432 32H64C28.65 32 0 60.65 0 96v320c0 35.34 28.65 64 64 64h384c35.35 0 64-28.66 64-64V192C512 156.7 483.3 128 448 128zM416 336c-17.62 0-32-14.38-32-32s14.38-32 32-32s32 14.38 32 32S433.6 336 416 336z"></path></svg>
-                    <svg class="navbar-icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="at" class="svg-inline--fa fa-at" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"></path></svg>
-                    <svg class="navbar-icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user" class="svg-inline--fa fa-user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"></path></svg>
+                <div class="eight columns" style="color:#666666; margin-top: 1.5rem; padding: 1rem;">
+                    <a href="" style="text-decoration: none; color:inherit;"><i class="fa-solid fa-folder-tree navbar-icon"></i></a>
+                    <a href="" style="text-decoration: none; color:inherit;"><i class="fa-solid fa-wallet navbar-icon"></i></a>
+                    <a href="" style="text-decoration: none; color:inherit;"><i class="fa-solid fa-info navbar-icon"></i></a>
+                    <a href="" style="text-decoration: none; color:inherit;"><i class="fa-solid fa-user navbar-icon"></i></a>
                 </div>
             </div>
         </div>
 
-        <div class="container" style="height: 100%;">hasdasds{% block content %}{% endblock %}</div>
+        <div class="container" style="height: 100%;">hasdasds<i class="fa-solid fa-user"></i><i class="fa-brands fa-adn"></i>{% block content %}{% endblock %}</div>
         <footer>
             <div id="footer">
                 <div class="container">
                     <div class="row">
                         <div class="six columns">
-                            <svg class="footer-icon-left" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="code" class="svg-inline--fa fa-code" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M416 31.94C416 21.75 408.1 0 384.1 0c-13.98 0-26.87 9.072-30.89 23.18l-128 448c-.8404 2.935-1.241 5.892-1.241 8.801C223.1 490.3 232 512 256 512c13.92 0 26.73-9.157 30.75-23.22l128-448C415.6 37.81 416 34.85 416 31.94zM176 143.1c0-18.28-14.95-32-32-32c-8.188 0-16.38 3.125-22.62 9.376l-112 112C3.125 239.6 0 247.8 0 255.1S3.125 272.4 9.375 278.6l112 112C127.6 396.9 135.8 399.1 144 399.1c17.05 0 32-13.73 32-32c0-8.188-3.125-16.38-9.375-22.63L77.25 255.1l89.38-89.38C172.9 160.3 176 152.2 176 143.1zM640 255.1c0-8.188-3.125-16.38-9.375-22.63l-112-112C512.4 115.1 504.2 111.1 496 111.1c-17.05 0-32 13.73-32 32c0 8.188 3.125 16.38 9.375 22.63l89.38 89.38l-89.38 89.38C467.1 351.6 464 359.8 464 367.1c0 18.28 14.95 32 32 32c8.188 0 16.38-3.125 22.62-9.376l112-112C636.9 272.4 640 264.2 640 255.1z"></path></svg>
-                            <svg class="footer-icon-left" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="discord" class="svg-inline--fa fa-discord" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.5 69.84a1.5 1.5 0 0 0 -.764-.7A485.1 485.1 0 0 0 404.1 32.03a1.816 1.816 0 0 0 -1.923 .91 337.5 337.5 0 0 0 -14.9 30.6 447.8 447.8 0 0 0 -134.4 0 309.5 309.5 0 0 0 -15.14-30.6 1.89 1.89 0 0 0 -1.924-.91A483.7 483.7 0 0 0 116.1 69.14a1.712 1.712 0 0 0 -.788 .676C39.07 183.7 18.19 294.7 28.43 404.4a2.016 2.016 0 0 0 .765 1.375A487.7 487.7 0 0 0 176 479.9a1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.1 430.4a1.86 1.86 0 0 0 -1.019-2.588 321.2 321.2 0 0 1 -45.87-21.85 1.885 1.885 0 0 1 -.185-3.126c3.082-2.309 6.166-4.711 9.109-7.137a1.819 1.819 0 0 1 1.9-.256c96.23 43.92 200.4 43.92 295.5 0a1.812 1.812 0 0 1 1.924 .233c2.944 2.426 6.027 4.851 9.132 7.16a1.884 1.884 0 0 1 -.162 3.126 301.4 301.4 0 0 1 -45.89 21.83 1.875 1.875 0 0 0 -1 2.611 391.1 391.1 0 0 0 30.01 48.81 1.864 1.864 0 0 0 2.063 .7A486 486 0 0 0 610.7 405.7a1.882 1.882 0 0 0 .765-1.352C623.7 277.6 590.9 167.5 524.5 69.84zM222.5 337.6c-28.97 0-52.84-26.59-52.84-59.24S193.1 219.1 222.5 219.1c29.67 0 53.31 26.82 52.84 59.24C275.3 310.1 251.9 337.6 222.5 337.6zm195.4 0c-28.97 0-52.84-26.59-52.84-59.24S388.4 219.1 417.9 219.1c29.67 0 53.31 26.82 52.84 59.24C470.7 310.1 447.5 337.6 417.9 337.6z"></path></svg>
+                            <i class="fa-solid fa-code footer-icon-left"></i>
+                            <i class="fa-brands fa-discord footer-icon-left"></i>
                         </div>
                         <div class="six columns">
-                            <svg class="footer-icon-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="code-branch" class="svg-inline--fa fa-code-branch" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M448 80C448 35.82 412.2 0 368 0C323.8 0 288 35.82 288 80c0 32.79 19.77 60.89 48 73.25V192c0 17.66-14.36 32-32 32h-160c-11.28 0-21.94 2.312-32 5.898V153.2C140.2 140.9 160 112.8 160 80C160 35.82 124.2 0 80 0C35.82 0 0 35.82 0 80c0 32.79 19.77 60.89 48 73.25v205.5C19.77 371.1 0 399.2 0 432C0 476.2 35.82 512 80 512C124.2 512 160 476.2 160 432c0-32.79-19.77-60.89-48-73.25V320c0-17.66 14.36-32 32-32h160c52.94 0 96-43.06 96-96V153.2C428.2 140.9 448 112.8 448 80zM80 56c13.23 0 24 10.77 24 24S93.23 104 80 104c-13.23 0-24-10.77-24-24S66.77 56 80 56zM80 456c-13.23 0-24-10.77-24-24s10.77-24 24-24c13.23 0 24 10.77 24 24S93.23 456 80 456zM368 56c13.23 0 24 10.77 24 24s-10.77 24-24 24c-13.23 0-24-10.77-24-24S354.8 56 368 56z"></path></svg>
+                            <i class="fa-solid fa-code-branch footer-icon-right"></i>
                         </div>
                     </div>
                 </div>
