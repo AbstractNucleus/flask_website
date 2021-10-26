@@ -1,0 +1,22 @@
+#footer {
+    color:#7c7c7c;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 2%;
+}
+.navbar-icon {
+    width: 3rem;
+    height: 3rem;
+    float: left;
+}
+.footer-icon-right {
+    width: 1.5rem;
+    height: 1.5rem;
+    float: right;
+}
+.footer-icon-left {
+    width: 1.5rem;
+    height: 1.5rem;
+    float: left;
+}
