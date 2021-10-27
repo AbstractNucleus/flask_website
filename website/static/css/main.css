@@ -1,15 +1,21 @@
+.color-1 {color: #e05df1;}
+.color-2 {color: #e5af36;}
+.color-3 {color: #7c7c7c;}
+.color-4 {color: #ebebeb;}
+.color-5 {color: #d63a3e;};.color-5:hover {color: #d63a3f8e;}
+.color-6 {color: #222222;}
+.navbar-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    float: left;
+    margin-right: 2rem;
+}.navbar-icon:hover {color: #d63a3f8e;}
 #footer {
     color:#7c7c7c;
     position: absolute;
     bottom: 0;
     width: 100%;
     margin-bottom: 2%;
-}
-.navbar-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    float: left;
-    margin-right: 2rem;
 }
 .footer-icon-right {
     font-size: 1.3rem;
@@ -19,4 +25,4 @@
     font-size: 1.3rem;
     float: left;
     margin: 0 0 0 2.5rem;
-}
+}.footer-icon-left:hover, .footer-icon-right:hover {color: #d63a3f8e;}
